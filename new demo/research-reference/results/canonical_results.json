@@ -1,0 +1,111 @@
+{
+  "config": {
+    "seeds": [
+      42,
+      7,
+      123
+    ],
+    "features": 60,
+    "model": "HistGradientBoostingClassifier(max_iter=300)",
+    "cv": "StratifiedGroupKFold(5) on package, class-weighted",
+    "size_match_rule": "size ratio <= 3 (implemented as |log1p(s1)-log1p(s2)| <= log(3)); i.e. matched within a factor of three on files_total, within ecosystem"
+  },
+  "size_matched": {
+    "n_malicious": 360,
+    "n_controls": 255,
+    "n_total": 615,
+    "packages": 180,
+    "prevalence": 0.5854,
+    "roc_auc_mean": 0.8012,
+    "roc_auc_sd": 0.0063,
+    "pr_auc_mean": 0.8464,
+    "pr_auc_sd": 0.0049,
+    "roc_by_seed": [
+      0.8083,
+      0.793,
+      0.8024
+    ],
+    "matching": "without-replacement nearest-neighbour control selection on files_total within ecosystem, accepted when the file-count ratio is at most 3 (|log1p(s1)-log1p(s2)| <= log 3); 255 controls selected for the fixed set of 360 malicious pairs, all positives retained, so 105 malicious pairs have no individually matched control",
+    "source_files": [
+      "features_v6_clean.csv",
+      "features_v6_controls.csv"
+    ]
+  },
+  "size_only_baseline": {
+    "roc_auc": 0.7063,
+    "pr_auc": 0.7361
+  },
+  "operating_points": [
+    {
+      "fpr_budget": 0.01,
+      "achieved_fpr": 0.0078,
+      "recall": 0.1667,
+      "precision": 0.9677
+    },
+    {
+      "fpr_budget": 0.05,
+      "achieved_fpr": 0.0471,
+      "recall": 0.3806,
+      "precision": 0.9195
+    },
+    {
+      "fpr_budget": 0.1,
+      "achieved_fpr": 0.098,
+      "recall": 0.4806,
+      "precision": 0.8737
+    },
+    {
+      "fpr_budget": 0.2,
+      "achieved_fpr": 0.2,
+      "recall": 0.6444,
+      "precision": 0.8198
+    }
+  ],
+  "confusion_at_0.5": {
+    "tp": 294,
+    "fn": 66,
+    "fp": 85,
+    "tn": 170,
+    "recall": 0.8167,
+    "precision": 0.7757,
+    "f1": 0.7957
+  },
+  "per_ecosystem": {
+    "npm": {
+      "n": 527,
+      "roc_auc": 0.8104,
+      "pr_auc": 0.862,
+      "chance": 0.5996
+    },
+    "pypi": {
+      "n": 88,
+      "roc_auc": 0.7991,
+      "pr_auc": 0.7996,
+      "chance": 0.5
+    }
+  },
+  "nested_cv_f1": {
+    "f1": 0.7922,
+    "ci95": [
+      0.7297,
+      0.8452
+    ],
+    "inner_folds": 3,
+    "bootstrap": 2000
+  },
+  "within_package": {
+    "roc_auc": 0.551,
+    "pr_auc": 0.5453,
+    "prevalence": 0.5092
+  },
+  "unmatched_controls": {
+    "roc_auc": 0.8751,
+    "pr_auc": 0.8363,
+    "prevalence": 0.4301
+  },
+  "notes": {
+    "version_context": "Version-context (predecessor) values are not computed in this file. They are in results/version_context_primary_final.json, computed on the primary malicious pairs with the predecessor features these pairs carry (entropy_before, ast_nodes_before, delta_*).",
+    "evaluation_set": "The primary evaluation set is 360 malicious against 255 size-matched controls, prevalence 0.5854. This is the primary configuration, used for the headline ROC-AUC, PR-AUC and threshold-0.5 confusion matrix; the within-package and unmatched-control designs are recorded separately in this file and are also quoted in the manuscript.",
+    "model": "All values in this file were produced with HistGradientBoostingClassifier(max_iter=300), class-weighted, under StratifiedGroupKFold(5) grouped on package."
+  }
+}

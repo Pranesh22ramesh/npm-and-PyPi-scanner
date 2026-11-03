@@ -1,0 +1,21 @@
+{
+  "n_reviewed": 120,
+  "counts": {
+    "unclear": 95,
+    "update_compromise": 20,
+    "malware_from_origin": 4,
+    "typosquat": 1
+  },
+  "update_compromise_rate_all": 0.1667,
+  "ci95_all": [
+    0.1106,
+    0.2435
+  ],
+  "n_verifiable": 25,
+  "update_compromise_rate_verifiable": 0.8,
+  "ci95_verifiable": [
+    0.6087,
+    0.9114
+  ],
+  "high_priority_precision": 1.0
+}

@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/moatasem2005/Version-Context-and-Control-Construction-in-Machine-Learning-Detection-of-Malicious-Package-Updates",
+  "commit": "e090c96aa6fbe5ecbc59ec83063ea3ce6ebf9754",
+  "source": "notebooks/05_sample_hygiene.ipynb, cell 13",
+  "changes": "Added standard-library imports and removed final notebook log call. Feature functions unchanged.",
+  "extractor_sha256": "5d5efe9589a31d0c200f46b77be49600ec978c21844cb653a9f6acfa91268272",
+  "dataset_sha256": "f434be0699ec7163c49d957b0f27b6eb1312e0098c43934fda6859a03ce4b355"
+}

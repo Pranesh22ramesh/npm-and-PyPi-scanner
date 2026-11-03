@@ -1,0 +1,34 @@
+{
+  "dataset": "PRIMARY malicious (360) + v4 size-matched negatives, TRUE predecessor features (entropy_before, ast_nodes_before, delta_*)",
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "n_malicious": 360,
+  "package_grouped": {
+    "n": 682,
+    "prevalence": 0.528,
+    "candidate_only": 0.694,
+    "correct": 0.7175,
+    "shuffled": 0.6739,
+    "wrong_package": 0.6706,
+    "no_predecessor": 0.694,
+    "gain_vs_shuffled": 0.0436,
+    "gain_vs_candidate": 0.0235
+  },
+  "random": {
+    "n": 682,
+    "prevalence": 0.528,
+    "candidate_only": 0.7002,
+    "correct": 0.7369,
+    "shuffled": 0.6964,
+    "wrong_package": 0.6771,
+    "no_predecessor": 0.7002,
+    "gain_vs_shuffled": 0.0405,
+    "gain_vs_candidate": 0.0367
+  },
+  "framing": "Version-context value measured on the primary malicious pairs (360, identical to the detection experiment) under a within-package control design, using the true predecessor features (entropy_before, ast_nodes_before, delta_*) available for these pairs. Controls are same-package negatives. The gain is the drop in PR-AUC when the predecessor is replaced by a shuffled or wrong-package predecessor.",
+  "relationship_to_detector": "The detector headline (ROC-AUC 0.801) uses size-matched CLEAN controls, which do not carry predecessor features; the version-context experiment necessarily uses same-package controls that do. Both use the same 360 malicious pairs.",
+  "source_script": "version_context_experiment.py"
+}

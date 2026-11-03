@@ -1,0 +1,20 @@
+import { useEffect,useState,type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { AlertCircle,ArrowUpRight,CheckCircle2,LoaderCircle,UploadCloud } from 'lucide-react'
+import { api } from '../services/api'
+import type { Job,Scan } from '../types'
+import {date,percent} from '../utils/format'
+
+export function Heading({eyebrow,title,children,action}:{eyebrow:string;title:string;children?:ReactNode;action?:ReactNode}){return <div className="page-heading"><div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1>{children&&<p className="subtitle">{children}</p>}</div>{action}</div>}
+export function Notice({children,error=false}:{children:ReactNode;error?:boolean}){return <div className={error?'notice error':'notice'} role={error?'alert':undefined}><AlertCircle size={19}/><div>{children}</div></div>}
+export function Empty({children}:{children:ReactNode}){return <div className="empty"><div className="empty-icon"><CheckCircle2 size={26}/></div>{children}</div>}
+export function Loading(){return <div className="loading" role="status"><LoaderCircle className="spin" size={20}/> Loading research data…</div>}
+export function FileInput({onChange,label='Choose CSV file',accept='.csv'}:{onChange:(file:File)=>void;label?:string;accept?:string}){return <label className="file-input"><UploadCloud size={28}/><strong>{label}</strong><span>Choose a file from your computer · maximum 25 MB</span><input type="file" accept={accept} onChange={e=>{if(e.target.files?.[0])onChange(e.target.files[0])}}/></label>}
+export function JobProgress<T>({id,onDone}:{id:string;onDone:(value:T)=>void}){
+ const [job,setJob]=useState<Job<T>|null>(null),[error,setError]=useState('')
+ useEffect(()=>{let alive=true;let timer:ReturnType<typeof setTimeout>;const poll=async()=>{try{const value=await api<Job<T>>('/jobs/'+id);if(!alive)return;setJob(value);if(value.status==='completed'){onDone(value.result);return}if(value.status!=='failed')timer=setTimeout(poll,1200)}catch(e){if(alive)setError(String(e))}};void poll();return()=>{alive=false;clearTimeout(timer)}},[id])
+ return <div className="job" role="status">{error||job?.status==='failed'?<Notice error>{error||job?.message}</Notice>:<><LoaderCircle className="spin" size={22}/><div><strong>{job?.message??'Submitting job…'}</strong><p>Progress is reported by the backend.</p></div></>}</div>
+}
+export function ScanTable({scans}:{scans:Scan[]}){return scans.length?<div className="table-wrap"><table><thead><tr><th>Package</th><th>Source</th><th>Model score</th><th>Screening result</th><th>Analyzed</th><th><span className="sr-only">View</span></th></tr></thead><tbody>{scans.map(s=><tr key={s.id}><td><Link className="package-name" to={'/result/'+s.id}>{s.package}</Link><small>{s.version_pairs_used} version pairs</small></td><td><span className="tag">{s.registry}</span></td><td><strong>{percent(s.model_score)}</strong></td><td><Badge prediction={s.prediction}/></td><td className="muted">{date(s.created_at)}</td><td><Link to={'/result/'+s.id} aria-label={'View '+s.package}><ArrowUpRight size={18}/></Link></td></tr>)}</tbody></table></div>:<Empty><h3>No scans yet</h3><p>Analyze a package history to create your first screening result.</p><Link className="button" to="/analyze">Analyze a package</Link></Empty>}
+export function Badge({prediction}:{prediction:string}){return <span className={'badge '+(prediction==='malicious-risk'?'risk':'clean')}>{prediction==='malicious-risk'?'Malicious-Risk':'Clean-Risk'}</span>}
+export function Bars({data,format}:{data:Record<string,number>;format?:(v:number)=>string}){const maximum=Math.max(...Object.values(data),1);return Object.keys(data).length?<div className="bars">{Object.entries(data).map(([name,value])=><div key={name}><div className="bar-label"><span>{name.replaceAll('_',' ')}</span><strong>{format?format(value):value}</strong></div><div className="bar-track"><div style={{width:`${value/maximum*100}%`}}/></div></div>)}</div>:<p className="muted chart-empty">No observations yet.</p>}

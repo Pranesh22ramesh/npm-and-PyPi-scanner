@@ -1,0 +1,138 @@
+{
+  "primary_size_matched": {
+    "config": {
+      "model": "HistGradientBoostingClassifier(max_iter=300), class-weighted",
+      "cv": "StratifiedGroupKFold(5) grouped on package",
+      "seeds": [
+        42,
+        7,
+        123
+      ],
+      "dataset": "primary_size_matched_dataset.csv (360 malicious / 255 size-matched clean controls)",
+      "score": "mean out-of-fold predicted probability over the three seeds",
+      "threshold": 0.5,
+      "sklearn_version": "1.8.0"
+    },
+    "confusion_at_0.5": {
+      "seed_42_only": {
+        "tp": 292,
+        "fn": 68,
+        "fp": 84,
+        "tn": 171
+      },
+      "three_seed_mean_probability": {
+        "tp": 276,
+        "fn": 84,
+        "fp": 87,
+        "tn": 168
+      },
+      "note": "The manuscript quotes the seed-42 matrix for this design; canonical_results.json records 294/66/85/170 for it. The three-seed mean is a different estimator and is reported here only because the case scores use it."
+    },
+    "cases": [
+      {
+        "package": "twokey",
+        "pair": "1.0.4 -> 1.0.5",
+        "label": 1,
+        "score": 0.933,
+        "score_by_seed": [
+          0.998,
+          1.0,
+          0.801
+        ],
+        "predicted_at_0.5": 1
+      },
+      {
+        "package": "@weirdorg/config",
+        "pair": "1.0.2 -> 1.0.3",
+        "label": 1,
+        "score": 1.0,
+        "score_by_seed": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "predicted_at_0.5": 1
+      },
+      {
+        "package": "@woody-mrs-potato/utils-banking",
+        "pair": "1.0.7 -> 1.0.8",
+        "label": 1,
+        "score": 0.999,
+        "score_by_seed": [
+          0.999,
+          1.0,
+          0.999
+        ],
+        "predicted_at_0.5": 1
+      }
+    ]
+  },
+  "within_package": {
+    "config": {
+      "model": "HistGradientBoostingClassifier(max_iter=300), class-weighted",
+      "cv": "StratifiedGroupKFold(5) grouped on package",
+      "seeds": [
+        42,
+        7,
+        123
+      ],
+      "dataset": "features_v6_clean.csv (360 malicious / 347 same-package controls)",
+      "score": "mean out-of-fold predicted probability over the three seeds",
+      "threshold": 0.5,
+      "sklearn_version": "1.8.0"
+    },
+    "confusion_at_0.5": {
+      "seed_42_only": {
+        "tp": 185,
+        "fn": 175,
+        "fp": 145,
+        "tn": 202
+      },
+      "three_seed_mean_probability": {
+        "tp": 195,
+        "fn": 165,
+        "fp": 162,
+        "tn": 185
+      },
+      "note": "The matrices in this section are reported for diagnostic context only. canonical_results.json does not define a threshold-0.5 confusion matrix for the within-package design; that design is summarised there by ROC-AUC and PR-AUC."
+    },
+    "cases": [
+      {
+        "package": "twokey",
+        "pair": "1.0.4 -> 1.0.5",
+        "label": 1,
+        "score": 0.56,
+        "score_by_seed": [
+          0.276,
+          0.533,
+          0.871
+        ],
+        "predicted_at_0.5": 1
+      },
+      {
+        "package": "@weirdorg/config",
+        "pair": "1.0.2 -> 1.0.3",
+        "label": 1,
+        "score": 0.011,
+        "score_by_seed": [
+          0.017,
+          0.012,
+          0.005
+        ],
+        "predicted_at_0.5": 0
+      },
+      {
+        "package": "@woody-mrs-potato/utils-banking",
+        "pair": "1.0.7 -> 1.0.8",
+        "label": 1,
+        "score": 0.74,
+        "score_by_seed": [
+          0.849,
+          0.895,
+          0.477
+        ],
+        "predicted_at_0.5": 1
+      }
+    ]
+  }
+}

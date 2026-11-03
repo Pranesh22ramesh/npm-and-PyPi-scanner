@@ -1,0 +1,52 @@
+{
+  "n_sampled": 40,
+  "peak_memory_mb": 114.4,
+  "failure_rate": 0.0,
+  "median_end_to_end_s": 0.896,
+  "mean_end_to_end_s": 1.069,
+  "network_share_pct": 86.1,
+  "throughput_per_hour": 3366,
+  "inference_us": 68.57,
+  "by_ecosystem": {
+    "('metadata_s', 'median')": {
+      "npm": 0.4489,
+      "pypi": 0.4231
+    },
+    "('metadata_s', 'mean')": {
+      "npm": 0.4556,
+      "pypi": 0.508
+    },
+    "('download_s', 'median')": {
+      "npm": 0.4401,
+      "pypi": 0.4141
+    },
+    "('download_s', 'mean')": {
+      "npm": 0.4643,
+      "pypi": 0.418
+    },
+    "('extract_s', 'median')": {
+      "npm": 0.0054,
+      "pypi": 0.0301
+    },
+    "('extract_s', 'mean')": {
+      "npm": 0.1559,
+      "pypi": 0.1059
+    },
+    "('archive_kb', 'median')": {
+      "npm": 15.7896,
+      "pypi": 51.9785
+    },
+    "('archive_kb', 'mean')": {
+      "npm": 1765.2205,
+      "pypi": 159.3934
+    },
+    "('n_files', 'median')": {
+      "npm": 8.0,
+      "pypi": 30.0
+    },
+    "('n_files', 'mean')": {
+      "npm": 104.2353,
+      "pypi": 50.8333
+    }
+  }
+}

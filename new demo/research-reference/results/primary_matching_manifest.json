@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "matching_rule": "size ratio <= 3 within ecosystem (|log1p(s1)-log1p(s2)| <= log 3) on files_total",
+  "n_malicious_input": 360,
+  "n_control_pool": 477,
+  "n_controls_matched": 255,
+  "n_malicious_unmatched": 105,
+  "final_n": 615,
+  "prevalence": 0.5854,
+  "per_ecosystem": {
+    "npm": {
+      "malicious": 316,
+      "controls": 211
+    },
+    "pypi": {
+      "malicious": 44,
+      "controls": 44
+    }
+  }
+}

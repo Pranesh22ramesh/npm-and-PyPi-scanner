@@ -1,0 +1,1907 @@
+{
+  "model_name": "Multi-Version Package Risk Aggregation + RF-XGBoost Fusion",
+  "source_dataset_name": "primary_size_matched_dataset.csv",
+  "dataset_sha256": "f434be0699ec7163c49d957b0f27b6eb1312e0098c43934fda6859a03ce4b355",
+  "raw_feature_count": 60,
+  "aggregated_feature_count": 240,
+  "original_feature_names": [
+    "add_net_http",
+    "rem_net_http",
+    "net_net_http",
+    "add_subprocess_exec",
+    "rem_subprocess_exec",
+    "net_subprocess_exec",
+    "add_env_cred_access",
+    "rem_env_cred_access",
+    "net_env_cred_access",
+    "add_filesystem",
+    "rem_filesystem",
+    "net_filesystem",
+    "add_encoded_blob",
+    "rem_encoded_blob",
+    "net_encoded_blob",
+    "add_install_hook",
+    "rem_install_hook",
+    "net_install_hook",
+    "add_obfuscation",
+    "rem_obfuscation",
+    "net_obfuscation",
+    "addrate_net_http",
+    "addrate_subprocess_exec",
+    "addrate_env_cred_access",
+    "addrate_filesystem",
+    "addrate_encoded_blob",
+    "addrate_install_hook",
+    "addrate_obfuscation",
+    "added_lines",
+    "removed_lines",
+    "files_touched",
+    "files_new",
+    "files_total",
+    "churn_ratio",
+    "touched_frac",
+    "tb_blocks",
+    "tb_src_blocks",
+    "tb_sink_blocks",
+    "tb_both_blocks",
+    "tb_chain_blocks",
+    "tb_encoded_flow",
+    "tb_both_rate",
+    "tb_chain_rate",
+    "sc_added_entropy",
+    "sc_long_strings",
+    "sc_hex_escapes",
+    "sc_max_line_len",
+    "sc_mean_line_len",
+    "sc_toplevel_stmts",
+    "sc_toplevel_rate",
+    "sc_ident_entropy",
+    "sc_mean_ident_len",
+    "sc_nonascii_rate",
+    "ih_manifest_changed",
+    "ih_scripts_added",
+    "ih_install_hook_added",
+    "ih_deps_added",
+    "ih_setup_changed",
+    "ih_hook_has_network",
+    "ih_hook_has_exec"
+  ],
+  "aggregated_feature_names": [
+    "add_net_http__mean",
+    "rem_net_http__mean",
+    "net_net_http__mean",
+    "add_subprocess_exec__mean",
+    "rem_subprocess_exec__mean",
+    "net_subprocess_exec__mean",
+    "add_env_cred_access__mean",
+    "rem_env_cred_access__mean",
+    "net_env_cred_access__mean",
+    "add_filesystem__mean",
+    "rem_filesystem__mean",
+    "net_filesystem__mean",
+    "add_encoded_blob__mean",
+    "rem_encoded_blob__mean",
+    "net_encoded_blob__mean",
+    "add_install_hook__mean",
+    "rem_install_hook__mean",
+    "net_install_hook__mean",
+    "add_obfuscation__mean",
+    "rem_obfuscation__mean",
+    "net_obfuscation__mean",
+    "addrate_net_http__mean",
+    "addrate_subprocess_exec__mean",
+    "addrate_env_cred_access__mean",
+    "addrate_filesystem__mean",
+    "addrate_encoded_blob__mean",
+    "addrate_install_hook__mean",
+    "addrate_obfuscation__mean",
+    "added_lines__mean",
+    "removed_lines__mean",
+    "files_touched__mean",
+    "files_new__mean",
+    "files_total__mean",
+    "churn_ratio__mean",
+    "touched_frac__mean",
+    "tb_blocks__mean",
+    "tb_src_blocks__mean",
+    "tb_sink_blocks__mean",
+    "tb_both_blocks__mean",
+    "tb_chain_blocks__mean",
+    "tb_encoded_flow__mean",
+    "tb_both_rate__mean",
+    "tb_chain_rate__mean",
+    "sc_added_entropy__mean",
+    "sc_long_strings__mean",
+    "sc_hex_escapes__mean",
+    "sc_max_line_len__mean",
+    "sc_mean_line_len__mean",
+    "sc_toplevel_stmts__mean",
+    "sc_toplevel_rate__mean",
+    "sc_ident_entropy__mean",
+    "sc_mean_ident_len__mean",
+    "sc_nonascii_rate__mean",
+    "ih_manifest_changed__mean",
+    "ih_scripts_added__mean",
+    "ih_install_hook_added__mean",
+    "ih_deps_added__mean",
+    "ih_setup_changed__mean",
+    "ih_hook_has_network__mean",
+    "ih_hook_has_exec__mean",
+    "add_net_http__max",
+    "rem_net_http__max",
+    "net_net_http__max",
+    "add_subprocess_exec__max",
+    "rem_subprocess_exec__max",
+    "net_subprocess_exec__max",
+    "add_env_cred_access__max",
+    "rem_env_cred_access__max",
+    "net_env_cred_access__max",
+    "add_filesystem__max",
+    "rem_filesystem__max",
+    "net_filesystem__max",
+    "add_encoded_blob__max",
+    "rem_encoded_blob__max",
+    "net_encoded_blob__max",
+    "add_install_hook__max",
+    "rem_install_hook__max",
+    "net_install_hook__max",
+    "add_obfuscation__max",
+    "rem_obfuscation__max",
+    "net_obfuscation__max",
+    "addrate_net_http__max",
+    "addrate_subprocess_exec__max",
+    "addrate_env_cred_access__max",
+    "addrate_filesystem__max",
+    "addrate_encoded_blob__max",
+    "addrate_install_hook__max",
+    "addrate_obfuscation__max",
+    "added_lines__max",
+    "removed_lines__max",
+    "files_touched__max",
+    "files_new__max",
+    "files_total__max",
+    "churn_ratio__max",
+    "touched_frac__max",
+    "tb_blocks__max",
+    "tb_src_blocks__max",
+    "tb_sink_blocks__max",
+    "tb_both_blocks__max",
+    "tb_chain_blocks__max",
+    "tb_encoded_flow__max",
+    "tb_both_rate__max",
+    "tb_chain_rate__max",
+    "sc_added_entropy__max",
+    "sc_long_strings__max",
+    "sc_hex_escapes__max",
+    "sc_max_line_len__max",
+    "sc_mean_line_len__max",
+    "sc_toplevel_stmts__max",
+    "sc_toplevel_rate__max",
+    "sc_ident_entropy__max",
+    "sc_mean_ident_len__max",
+    "sc_nonascii_rate__max",
+    "ih_manifest_changed__max",
+    "ih_scripts_added__max",
+    "ih_install_hook_added__max",
+    "ih_deps_added__max",
+    "ih_setup_changed__max",
+    "ih_hook_has_network__max",
+    "ih_hook_has_exec__max",
+    "add_net_http__median",
+    "rem_net_http__median",
+    "net_net_http__median",
+    "add_subprocess_exec__median",
+    "rem_subprocess_exec__median",
+    "net_subprocess_exec__median",
+    "add_env_cred_access__median",
+    "rem_env_cred_access__median",
+    "net_env_cred_access__median",
+    "add_filesystem__median",
+    "rem_filesystem__median",
+    "net_filesystem__median",
+    "add_encoded_blob__median",
+    "rem_encoded_blob__median",
+    "net_encoded_blob__median",
+    "add_install_hook__median",
+    "rem_install_hook__median",
+    "net_install_hook__median",
+    "add_obfuscation__median",
+    "rem_obfuscation__median",
+    "net_obfuscation__median",
+    "addrate_net_http__median",
+    "addrate_subprocess_exec__median",
+    "addrate_env_cred_access__median",
+    "addrate_filesystem__median",
+    "addrate_encoded_blob__median",
+    "addrate_install_hook__median",
+    "addrate_obfuscation__median",
+    "added_lines__median",
+    "removed_lines__median",
+    "files_touched__median",
+    "files_new__median",
+    "files_total__median",
+    "churn_ratio__median",
+    "touched_frac__median",
+    "tb_blocks__median",
+    "tb_src_blocks__median",
+    "tb_sink_blocks__median",
+    "tb_both_blocks__median",
+    "tb_chain_blocks__median",
+    "tb_encoded_flow__median",
+    "tb_both_rate__median",
+    "tb_chain_rate__median",
+    "sc_added_entropy__median",
+    "sc_long_strings__median",
+    "sc_hex_escapes__median",
+    "sc_max_line_len__median",
+    "sc_mean_line_len__median",
+    "sc_toplevel_stmts__median",
+    "sc_toplevel_rate__median",
+    "sc_ident_entropy__median",
+    "sc_mean_ident_len__median",
+    "sc_nonascii_rate__median",
+    "ih_manifest_changed__median",
+    "ih_scripts_added__median",
+    "ih_install_hook_added__median",
+    "ih_deps_added__median",
+    "ih_setup_changed__median",
+    "ih_hook_has_network__median",
+    "ih_hook_has_exec__median",
+    "add_net_http__std",
+    "rem_net_http__std",
+    "net_net_http__std",
+    "add_subprocess_exec__std",
+    "rem_subprocess_exec__std",
+    "net_subprocess_exec__std",
+    "add_env_cred_access__std",
+    "rem_env_cred_access__std",
+    "net_env_cred_access__std",
+    "add_filesystem__std",
+    "rem_filesystem__std",
+    "net_filesystem__std",
+    "add_encoded_blob__std",
+    "rem_encoded_blob__std",
+    "net_encoded_blob__std",
+    "add_install_hook__std",
+    "rem_install_hook__std",
+    "net_install_hook__std",
+    "add_obfuscation__std",
+    "rem_obfuscation__std",
+    "net_obfuscation__std",
+    "addrate_net_http__std",
+    "addrate_subprocess_exec__std",
+    "addrate_env_cred_access__std",
+    "addrate_filesystem__std",
+    "addrate_encoded_blob__std",
+    "addrate_install_hook__std",
+    "addrate_obfuscation__std",
+    "added_lines__std",
+    "removed_lines__std",
+    "files_touched__std",
+    "files_new__std",
+    "files_total__std",
+    "churn_ratio__std",
+    "touched_frac__std",
+    "tb_blocks__std",
+    "tb_src_blocks__std",
+    "tb_sink_blocks__std",
+    "tb_both_blocks__std",
+    "tb_chain_blocks__std",
+    "tb_encoded_flow__std",
+    "tb_both_rate__std",
+    "tb_chain_rate__std",
+    "sc_added_entropy__std",
+    "sc_long_strings__std",
+    "sc_hex_escapes__std",
+    "sc_max_line_len__std",
+    "sc_mean_line_len__std",
+    "sc_toplevel_stmts__std",
+    "sc_toplevel_rate__std",
+    "sc_ident_entropy__std",
+    "sc_mean_ident_len__std",
+    "sc_nonascii_rate__std",
+    "ih_manifest_changed__std",
+    "ih_scripts_added__std",
+    "ih_install_hook_added__std",
+    "ih_deps_added__std",
+    "ih_setup_changed__std",
+    "ih_hook_has_network__std",
+    "ih_hook_has_exec__std"
+  ],
+  "aggregation_order": [
+    "mean",
+    "max",
+    "median",
+    "std"
+  ],
+  "std_ddof": 1,
+  "random_forest_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 300,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "xgboost_parameters": {
+    "objective": "binary:logistic",
+    "base_score": null,
+    "booster": null,
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": 0.8,
+    "device": null,
+    "early_stopping_rounds": null,
+    "enable_categorical": true,
+    "eval_metric": "logloss",
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.04,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 3,
+    "max_leaves": null,
+    "min_child_weight": 3,
+    "missing": null,
+    "monotone_constraints": null,
+    "multi_strategy": null,
+    "n_estimators": 250,
+    "n_jobs": -1,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": 0.1,
+    "reg_lambda": 2.0,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": 0.9,
+    "tree_method": null,
+    "validate_parameters": null,
+    "verbosity": null
+  },
+  "fusion_weights": [
+    0.5,
+    0.5
+  ],
+  "decision_threshold": 0.5,
+  "package_count": 180,
+  "version_pair_count": 615,
+  "class_distribution": {
+    "malicious": 128,
+    "clean": 52
+  },
+  "training_date": "2026-10-07T20:31:41.803696+00:00",
+  "evaluation_metrics": {
+    "accuracy": {
+      "mean": 0.9077777777777779,
+      "std": 0.036500746934124105,
+      "min": 0.8055555555555556,
+      "max": 0.9722222222222222
+    },
+    "precision": {
+      "mean": 0.9444883434961396,
+      "std": 0.0358153439244514,
+      "min": 0.875,
+      "max": 1.0
+    },
+    "recall": {
+      "mean": 0.9263384615384617,
+      "std": 0.05317219246262139,
+      "min": 0.8076923076923077,
+      "max": 1.0
+    },
+    "f1": {
+      "mean": 0.9339372902148164,
+      "std": 0.027712609101898805,
+      "min": 0.8571428571428571,
+      "max": 0.9811320754716981
+    },
+    "roc_auc": {
+      "mean": 0.9607636363636363,
+      "std": 0.024788400813795443,
+      "min": 0.8981818181818182,
+      "max": 0.9961538461538462
+    }
+  },
+  "seed42_confusion_matrix": [
+    [
+      45,
+      7
+    ],
+    [
+      12,
+      116
+    ]
+  ],
+  "evaluation_seeds": [
+    7,
+    42,
+    77,
+    123,
+    2026
+  ],
+  "evaluation_protocol": "Stratified 5-fold CV per seed after package aggregation; fixed threshold 0.50",
+  "application_version": "1.0.0",
+  "model_version": "1.0.0-81cd5144",
+  "final_seed": 42,
+  "feature_importance": [
+    {
+      "feature": "add_net_http__mean",
+      "importance": 0.009282875361764111,
+      "rf_importance": 0.0018426506275409042,
+      "xgb_importance": 0.01672310009598732
+    },
+    {
+      "feature": "rem_net_http__mean",
+      "importance": 0.001029702892353198,
+      "rf_importance": 0.002059405784706396,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_net_http__mean",
+      "importance": 0.0017370569124452544,
+      "rf_importance": 0.003474113824890509,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_subprocess_exec__mean",
+      "importance": 0.00016454341161245269,
+      "rf_importance": 0.00032908682322490537,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_subprocess_exec__mean",
+      "importance": 0.00013072140154385585,
+      "rf_importance": 0.0002614428030877117,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_subprocess_exec__mean",
+      "importance": 0.0003124486971888544,
+      "rf_importance": 0.0006248973943777088,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_env_cred_access__mean",
+      "importance": 0.0003789802478662309,
+      "rf_importance": 0.0007579604957324618,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_env_cred_access__mean",
+      "importance": 0.0002804082078919301,
+      "rf_importance": 0.0005608164157838601,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_env_cred_access__mean",
+      "importance": 0.0004837471936122687,
+      "rf_importance": 0.0009674943872245374,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_filesystem__mean",
+      "importance": 0.0003552866158431324,
+      "rf_importance": 0.0007105732316862648,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_filesystem__mean",
+      "importance": 5.147923621633486e-05,
+      "rf_importance": 0.00010295847243266973,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_filesystem__mean",
+      "importance": 0.00020990628674333813,
+      "rf_importance": 0.00041981257348667626,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_encoded_blob__mean",
+      "importance": 8.659409991168325e-05,
+      "rf_importance": 0.0001731881998233665,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_encoded_blob__mean",
+      "importance": 8.74513397485782e-05,
+      "rf_importance": 0.0001749026794971564,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_encoded_blob__mean",
+      "importance": 0.00015846972302477165,
+      "rf_importance": 0.0003169394460495433,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_install_hook__mean",
+      "importance": 0.00010976928616570459,
+      "rf_importance": 0.00021953857233140918,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_install_hook__mean",
+      "importance": 0.0001438582530976661,
+      "rf_importance": 0.0002877165061953322,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_install_hook__mean",
+      "importance": 0.0003809906804962976,
+      "rf_importance": 0.0007619813609925952,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_obfuscation__mean",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_obfuscation__mean",
+      "importance": 6.655991452162783e-05,
+      "rf_importance": 0.00013311982904325566,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_obfuscation__mean",
+      "importance": 0.0002421442512405945,
+      "rf_importance": 0.000484288502481189,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_net_http__mean",
+      "importance": 0.00108389611671254,
+      "rf_importance": 0.00216779223342508,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_subprocess_exec__mean",
+      "importance": 0.0003540978971634388,
+      "rf_importance": 0.0007081957943268776,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_env_cred_access__mean",
+      "importance": 0.000945572479829492,
+      "rf_importance": 0.001891144959658984,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_filesystem__mean",
+      "importance": 0.0013582791328752633,
+      "rf_importance": 0.0027165582657505266,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_encoded_blob__mean",
+      "importance": 0.00014780150582454341,
+      "rf_importance": 0.00029560301164908683,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_install_hook__mean",
+      "importance": 0.00020804596634661627,
+      "rf_importance": 0.00041609193269323254,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_obfuscation__mean",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "added_lines__mean",
+      "importance": 0.020921316237944937,
+      "rf_importance": 0.028506605434812256,
+      "xgb_importance": 0.013336027041077614
+    },
+    {
+      "feature": "removed_lines__mean",
+      "importance": 0.029197815334791488,
+      "rf_importance": 0.04027964080571045,
+      "xgb_importance": 0.018115989863872528
+    },
+    {
+      "feature": "files_touched__mean",
+      "importance": 0.08216351452705202,
+      "rf_importance": 0.0755725613879549,
+      "xgb_importance": 0.08875446766614914
+    },
+    {
+      "feature": "files_new__mean",
+      "importance": 0.005745218141895831,
+      "rf_importance": 0.011490436283791662,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "files_total__mean",
+      "importance": 0.014526230549428868,
+      "rf_importance": 0.01899715007466874,
+      "xgb_importance": 0.010055311024188995
+    },
+    {
+      "feature": "churn_ratio__mean",
+      "importance": 0.0056487185979732235,
+      "rf_importance": 0.005167184231151812,
+      "xgb_importance": 0.006130252964794636
+    },
+    {
+      "feature": "touched_frac__mean",
+      "importance": 0.01723228213098446,
+      "rf_importance": 0.009412670595582316,
+      "xgb_importance": 0.025051893666386604
+    },
+    {
+      "feature": "tb_blocks__mean",
+      "importance": 0.006359730913104346,
+      "rf_importance": 0.012719461826208691,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_src_blocks__mean",
+      "importance": 0.01471614235053939,
+      "rf_importance": 0.0029373104306157903,
+      "xgb_importance": 0.02649497427046299
+    },
+    {
+      "feature": "tb_sink_blocks__mean",
+      "importance": 0.001695567327458893,
+      "rf_importance": 0.003391134654917786,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_blocks__mean",
+      "importance": 0.0010517339882973433,
+      "rf_importance": 0.0021034679765946866,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_blocks__mean",
+      "importance": 0.00025924149549648207,
+      "rf_importance": 0.0005184829909929641,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_encoded_flow__mean",
+      "importance": 0.00017608727190842873,
+      "rf_importance": 0.00035217454381685745,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_rate__mean",
+      "importance": 0.004188768266575834,
+      "rf_importance": 0.0009124645569668238,
+      "xgb_importance": 0.007465071976184845
+    },
+    {
+      "feature": "tb_chain_rate__mean",
+      "importance": 0.0002206303007876092,
+      "rf_importance": 0.0004412606015752184,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_added_entropy__mean",
+      "importance": 0.00947525908708112,
+      "rf_importance": 0.008925944520225855,
+      "xgb_importance": 0.010024573653936386
+    },
+    {
+      "feature": "sc_long_strings__mean",
+      "importance": 6.543023909943601e-05,
+      "rf_importance": 0.00013086047819887202,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_hex_escapes__mean",
+      "importance": 0.00029632834792542274,
+      "rf_importance": 0.0005926566958508455,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_max_line_len__mean",
+      "importance": 0.004576026221998565,
+      "rf_importance": 0.004658469915912613,
+      "xgb_importance": 0.0044935825280845165
+    },
+    {
+      "feature": "sc_mean_line_len__mean",
+      "importance": 0.0016420314123487072,
+      "rf_importance": 0.0032840628246974144,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_toplevel_stmts__mean",
+      "importance": 0.04383975397242236,
+      "rf_importance": 0.01678572109725332,
+      "xgb_importance": 0.0708937868475914
+    },
+    {
+      "feature": "sc_toplevel_rate__mean",
+      "importance": 0.01275858935841696,
+      "rf_importance": 0.010532577539558738,
+      "xgb_importance": 0.01498460117727518
+    },
+    {
+      "feature": "sc_ident_entropy__mean",
+      "importance": 0.005016361127803782,
+      "rf_importance": 0.005934029812385756,
+      "xgb_importance": 0.0040986924432218075
+    },
+    {
+      "feature": "sc_mean_ident_len__mean",
+      "importance": 0.007701071525316501,
+      "rf_importance": 0.0030070004730444423,
+      "xgb_importance": 0.012395142577588558
+    },
+    {
+      "feature": "sc_nonascii_rate__mean",
+      "importance": 0.019715207879242948,
+      "rf_importance": 0.005936926731462578,
+      "xgb_importance": 0.033493489027023315
+    },
+    {
+      "feature": "ih_manifest_changed__mean",
+      "importance": 0.0004819878735707973,
+      "rf_importance": 0.0009639757471415946,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_scripts_added__mean",
+      "importance": 8.63053861963083e-05,
+      "rf_importance": 0.0001726107723926166,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_install_hook_added__mean",
+      "importance": 0.0001989246728223619,
+      "rf_importance": 0.0003978493456447238,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_deps_added__mean",
+      "importance": 0.00021110760451445822,
+      "rf_importance": 0.00042221520902891644,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_setup_changed__mean",
+      "importance": 0.0005534929727346792,
+      "rf_importance": 0.0011069859454693584,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_network__mean",
+      "importance": 0.00016675034717570194,
+      "rf_importance": 0.0003335006943514039,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_exec__mean",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_net_http__max",
+      "importance": 0.0010728219434958867,
+      "rf_importance": 0.0021456438869917735,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_net_http__max",
+      "importance": 0.0006306490360665621,
+      "rf_importance": 0.0012612980721331242,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_net_http__max",
+      "importance": 0.002342369511538758,
+      "rf_importance": 0.004684739023077516,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_subprocess_exec__max",
+      "importance": 0.00046235830465972286,
+      "rf_importance": 0.0009247166093194457,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_subprocess_exec__max",
+      "importance": 0.00012918584062540962,
+      "rf_importance": 0.00025837168125081924,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_subprocess_exec__max",
+      "importance": 0.00018750356269584548,
+      "rf_importance": 0.00037500712539169096,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_env_cred_access__max",
+      "importance": 0.0005463692475779027,
+      "rf_importance": 0.0010927384951558055,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_env_cred_access__max",
+      "importance": 0.0003679438006538091,
+      "rf_importance": 0.0007358876013076182,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_env_cred_access__max",
+      "importance": 0.00018768505655976852,
+      "rf_importance": 0.00037537011311953705,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_filesystem__max",
+      "importance": 0.00040150370607386544,
+      "rf_importance": 0.0008030074121477309,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_filesystem__max",
+      "importance": 3.18427876086067e-05,
+      "rf_importance": 6.36855752172134e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_filesystem__max",
+      "importance": 3.196856618074449e-05,
+      "rf_importance": 6.393713236148898e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_encoded_blob__max",
+      "importance": 0.00026436867034245674,
+      "rf_importance": 0.0005287373406849135,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_encoded_blob__max",
+      "importance": 0.0001524122502420361,
+      "rf_importance": 0.0003048245004840722,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_encoded_blob__max",
+      "importance": 8.46340976175564e-05,
+      "rf_importance": 0.0001692681952351128,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_install_hook__max",
+      "importance": 7.487463404982984e-05,
+      "rf_importance": 0.00014974926809965968,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_install_hook__max",
+      "importance": 5.301477345020145e-05,
+      "rf_importance": 0.0001060295469004029,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_install_hook__max",
+      "importance": 0.00010132045213280046,
+      "rf_importance": 0.00020264090426560093,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_obfuscation__max",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_obfuscation__max",
+      "importance": 9.609096396539363e-05,
+      "rf_importance": 0.00019218192793078726,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_obfuscation__max",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_net_http__max",
+      "importance": 0.001495366655113195,
+      "rf_importance": 0.00299073331022639,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_subprocess_exec__max",
+      "importance": 0.00023273759234069676,
+      "rf_importance": 0.0004654751846813935,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_env_cred_access__max",
+      "importance": 0.001837911232555176,
+      "rf_importance": 0.003675822465110352,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_filesystem__max",
+      "importance": 0.0006624282888679819,
+      "rf_importance": 0.0013248565777359638,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_encoded_blob__max",
+      "importance": 0.0002450556384490763,
+      "rf_importance": 0.0004901112768981526,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_install_hook__max",
+      "importance": 9.589539301406822e-05,
+      "rf_importance": 0.00019179078602813644,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_obfuscation__max",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "added_lines__max",
+      "importance": 0.04354903264659098,
+      "rf_importance": 0.034074831283439216,
+      "xgb_importance": 0.05302323400974274
+    },
+    {
+      "feature": "removed_lines__max",
+      "importance": 0.023828250122915593,
+      "rf_importance": 0.025479644070766146,
+      "xgb_importance": 0.02217685617506504
+    },
+    {
+      "feature": "files_touched__max",
+      "importance": 0.13365741390443275,
+      "rf_importance": 0.08104681111288926,
+      "xgb_importance": 0.18626801669597626
+    },
+    {
+      "feature": "files_new__max",
+      "importance": 0.005446031947930881,
+      "rf_importance": 0.010892063895861762,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "files_total__max",
+      "importance": 0.020117572041740202,
+      "rf_importance": 0.03045436646519141,
+      "xgb_importance": 0.009780777618288994
+    },
+    {
+      "feature": "churn_ratio__max",
+      "importance": 0.00916021991793454,
+      "rf_importance": 0.01015756697007299,
+      "xgb_importance": 0.00816287286579609
+    },
+    {
+      "feature": "touched_frac__max",
+      "importance": 0.014588198129757089,
+      "rf_importance": 0.013346214720455492,
+      "xgb_importance": 0.015830181539058685
+    },
+    {
+      "feature": "tb_blocks__max",
+      "importance": 0.007800100022141828,
+      "rf_importance": 0.015600200044283656,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_src_blocks__max",
+      "importance": 0.000635053125238301,
+      "rf_importance": 0.001270106250476602,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_sink_blocks__max",
+      "importance": 0.0006784473534448333,
+      "rf_importance": 0.0013568947068896666,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_blocks__max",
+      "importance": 0.00034733856448744343,
+      "rf_importance": 0.0006946771289748869,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_blocks__max",
+      "importance": 0.0002911430036347066,
+      "rf_importance": 0.0005822860072694132,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_encoded_flow__max",
+      "importance": 0.00011660881494708649,
+      "rf_importance": 0.00023321762989417298,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_rate__max",
+      "importance": 0.0007121887106638403,
+      "rf_importance": 0.0014243774213276805,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_rate__max",
+      "importance": 6.663507717284117e-05,
+      "rf_importance": 0.00013327015434568234,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_added_entropy__max",
+      "importance": 0.003974518742405769,
+      "rf_importance": 0.0034750467240679183,
+      "xgb_importance": 0.004473990760743618
+    },
+    {
+      "feature": "sc_long_strings__max",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_hex_escapes__max",
+      "importance": 0.0003414301350060675,
+      "rf_importance": 0.000682860270012135,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_max_line_len__max",
+      "importance": 0.0070761871630600345,
+      "rf_importance": 0.006242541803847005,
+      "xgb_importance": 0.007909832522273064
+    },
+    {
+      "feature": "sc_mean_line_len__max",
+      "importance": 0.0036957657218474054,
+      "rf_importance": 0.0036352816545462416,
+      "xgb_importance": 0.003756249789148569
+    },
+    {
+      "feature": "sc_toplevel_stmts__max",
+      "importance": 0.011622825194000173,
+      "rf_importance": 0.023245650388000347,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_toplevel_rate__max",
+      "importance": 0.004755691176045184,
+      "rf_importance": 0.009511382352090368,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_ident_entropy__max",
+      "importance": 0.010816577420612136,
+      "rf_importance": 0.01126058785066994,
+      "xgb_importance": 0.010372566990554333
+    },
+    {
+      "feature": "sc_mean_ident_len__max",
+      "importance": 0.006834807882878704,
+      "rf_importance": 0.003160494534022655,
+      "xgb_importance": 0.010509121231734753
+    },
+    {
+      "feature": "sc_nonascii_rate__max",
+      "importance": 0.013506835941105676,
+      "rf_importance": 0.006405425555764819,
+      "xgb_importance": 0.020608246326446533
+    },
+    {
+      "feature": "ih_manifest_changed__max",
+      "importance": 0.0003419662693294731,
+      "rf_importance": 0.0006839325386589462,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_scripts_added__max",
+      "importance": 0.0001937806406668105,
+      "rf_importance": 0.000387561281333621,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_install_hook_added__max",
+      "importance": 3.5431105289434554e-05,
+      "rf_importance": 7.086221057886911e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_deps_added__max",
+      "importance": 0.00019414730764640034,
+      "rf_importance": 0.00038829461529280067,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_setup_changed__max",
+      "importance": 0.0005121544534950722,
+      "rf_importance": 0.0010243089069901445,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_network__max",
+      "importance": 0.0001475288062084858,
+      "rf_importance": 0.0002950576124169716,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_exec__max",
+      "importance": 6.701234244784734e-05,
+      "rf_importance": 0.00013402468489569469,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_net_http__median",
+      "importance": 0.0009470446258486453,
+      "rf_importance": 0.0018940892516972907,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_net_http__median",
+      "importance": 0.000144887019293271,
+      "rf_importance": 0.000289774038586542,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_net_http__median",
+      "importance": 0.0003877021602881577,
+      "rf_importance": 0.0007754043205763154,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_subprocess_exec__median",
+      "importance": 0.00027908474774001804,
+      "rf_importance": 0.0005581694954800361,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_subprocess_exec__median",
+      "importance": 0.0002919491156962074,
+      "rf_importance": 0.0005838982313924148,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_subprocess_exec__median",
+      "importance": 0.0001481383132495366,
+      "rf_importance": 0.0002962766264990732,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_env_cred_access__median",
+      "importance": 0.00020182908208636534,
+      "rf_importance": 0.0004036581641727307,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_env_cred_access__median",
+      "importance": 0.00017167548546620097,
+      "rf_importance": 0.00034335097093240194,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_env_cred_access__median",
+      "importance": 0.00018270900204498796,
+      "rf_importance": 0.0003654180040899759,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_filesystem__median",
+      "importance": 6.605440123185736e-05,
+      "rf_importance": 0.00013210880246371473,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_filesystem__median",
+      "importance": 0.00015668513780128608,
+      "rf_importance": 0.00031337027560257217,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_filesystem__median",
+      "importance": 0.00032817501473668897,
+      "rf_importance": 0.0006563500294733779,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_encoded_blob__median",
+      "importance": 3.489716242448037e-05,
+      "rf_importance": 6.979432484896074e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_encoded_blob__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_encoded_blob__median",
+      "importance": 3.367003367003368e-05,
+      "rf_importance": 6.734006734006736e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_install_hook__median",
+      "importance": 1.545249331155546e-05,
+      "rf_importance": 3.090498662311092e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_install_hook__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_install_hook__median",
+      "importance": 9.281974064787585e-05,
+      "rf_importance": 0.0001856394812957517,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_obfuscation__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_obfuscation__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_obfuscation__median",
+      "importance": 3.622676185763765e-05,
+      "rf_importance": 7.24535237152753e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_net_http__median",
+      "importance": 0.0008760068654665862,
+      "rf_importance": 0.0017520137309331725,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_subprocess_exec__median",
+      "importance": 0.000464614831752339,
+      "rf_importance": 0.000929229663504678,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_env_cred_access__median",
+      "importance": 0.0014282246358758236,
+      "rf_importance": 0.0028564492717516473,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_filesystem__median",
+      "importance": 0.00021308782351844543,
+      "rf_importance": 0.00042617564703689085,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_encoded_blob__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_install_hook__median",
+      "importance": 3.7152030972325466e-05,
+      "rf_importance": 7.430406194465093e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_obfuscation__median",
+      "importance": 3.677481185411911e-05,
+      "rf_importance": 7.354962370823822e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "added_lines__median",
+      "importance": 0.025515798318105624,
+      "rf_importance": 0.010540000771915293,
+      "xgb_importance": 0.04049159586429596
+    },
+    {
+      "feature": "removed_lines__median",
+      "importance": 0.019373443772650753,
+      "rf_importance": 0.019325298915817333,
+      "xgb_importance": 0.019421588629484177
+    },
+    {
+      "feature": "files_touched__median",
+      "importance": 0.028828656285704357,
+      "rf_importance": 0.0350146386468434,
+      "xgb_importance": 0.022642673924565315
+    },
+    {
+      "feature": "files_new__median",
+      "importance": 0.0009938250509714467,
+      "rf_importance": 0.0019876501019428935,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "files_total__median",
+      "importance": 0.004573200618129552,
+      "rf_importance": 0.009146401236259104,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "churn_ratio__median",
+      "importance": 0.0017324741734431482,
+      "rf_importance": 0.0034649483468862964,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "touched_frac__median",
+      "importance": 0.00735123512777994,
+      "rf_importance": 0.006737330210870701,
+      "xgb_importance": 0.007965140044689178
+    },
+    {
+      "feature": "tb_blocks__median",
+      "importance": 0.002739029205928646,
+      "rf_importance": 0.005478058411857292,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_src_blocks__median",
+      "importance": 0.00032700959301602605,
+      "rf_importance": 0.0006540191860320521,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_sink_blocks__median",
+      "importance": 0.0009555150748293086,
+      "rf_importance": 0.0019110301496586173,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_blocks__median",
+      "importance": 0.0001611113043718691,
+      "rf_importance": 0.0003222226087437382,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_blocks__median",
+      "importance": 0.00014104671964281274,
+      "rf_importance": 0.0002820934392856255,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_encoded_flow__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_rate__median",
+      "importance": 0.0005251831252539318,
+      "rf_importance": 0.0010503662505078636,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_rate__median",
+      "importance": 6.587604963027948e-05,
+      "rf_importance": 0.00013175209926055895,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_added_entropy__median",
+      "importance": 0.005980541929766428,
+      "rf_importance": 0.004891440272658846,
+      "xgb_importance": 0.007069643586874008
+    },
+    {
+      "feature": "sc_long_strings__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_hex_escapes__median",
+      "importance": 0.0002386133460046477,
+      "rf_importance": 0.0004772266920092954,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_max_line_len__median",
+      "importance": 0.00869616497876143,
+      "rf_importance": 0.0057625473404307286,
+      "xgb_importance": 0.011629782617092133
+    },
+    {
+      "feature": "sc_mean_line_len__median",
+      "importance": 0.005646616709715594,
+      "rf_importance": 0.004483080516231992,
+      "xgb_importance": 0.006810152903199196
+    },
+    {
+      "feature": "sc_toplevel_stmts__median",
+      "importance": 0.001859105464104392,
+      "rf_importance": 0.003718210928208784,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_toplevel_rate__median",
+      "importance": 0.005009585803369193,
+      "rf_importance": 0.003449774902303036,
+      "xgb_importance": 0.0065693967044353485
+    },
+    {
+      "feature": "sc_ident_entropy__median",
+      "importance": 0.008133186417901953,
+      "rf_importance": 0.009127345717121043,
+      "xgb_importance": 0.007139027118682861
+    },
+    {
+      "feature": "sc_mean_ident_len__median",
+      "importance": 0.007502898360636708,
+      "rf_importance": 0.004933540282839292,
+      "xgb_importance": 0.010072256438434124
+    },
+    {
+      "feature": "sc_nonascii_rate__median",
+      "importance": 0.003598351342062001,
+      "rf_importance": 0.007196702684124002,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_manifest_changed__median",
+      "importance": 0.0007048720192686077,
+      "rf_importance": 0.0014097440385372154,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_scripts_added__median",
+      "importance": 3.529393079683696e-05,
+      "rf_importance": 7.058786159367392e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_install_hook_added__median",
+      "importance": 4.898997096843288e-05,
+      "rf_importance": 9.797994193686576e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_deps_added__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_setup_changed__median",
+      "importance": 0.0007565554434095122,
+      "rf_importance": 0.0015131108868190245,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_network__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_exec__median",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_net_http__std",
+      "importance": 0.0015499227179734019,
+      "rf_importance": 0.0030998454359468038,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_net_http__std",
+      "importance": 0.0012877447543266022,
+      "rf_importance": 0.0025754895086532044,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_net_http__std",
+      "importance": 0.0009782588123486504,
+      "rf_importance": 0.001956517624697301,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_subprocess_exec__std",
+      "importance": 0.00032315253843280463,
+      "rf_importance": 0.0006463050768656093,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_subprocess_exec__std",
+      "importance": 0.0003011448045442805,
+      "rf_importance": 0.000602289609088561,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_subprocess_exec__std",
+      "importance": 0.0002401211795079597,
+      "rf_importance": 0.0004802423590159194,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_env_cred_access__std",
+      "importance": 0.0007367953934486496,
+      "rf_importance": 0.0014735907868972992,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_env_cred_access__std",
+      "importance": 0.00028155879877167993,
+      "rf_importance": 0.0005631175975433599,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_env_cred_access__std",
+      "importance": 0.000473303000703464,
+      "rf_importance": 0.000946606001406928,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_filesystem__std",
+      "importance": 0.0001465188397025211,
+      "rf_importance": 0.0002930376794050422,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_filesystem__std",
+      "importance": 0.00015699666183940258,
+      "rf_importance": 0.00031399332367880515,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_filesystem__std",
+      "importance": 6.236038350365221e-05,
+      "rf_importance": 0.00012472076700730442,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_encoded_blob__std",
+      "importance": 0.0002088876900736767,
+      "rf_importance": 0.0004177753801473534,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_encoded_blob__std",
+      "importance": 0.00036565785177124503,
+      "rf_importance": 0.0007313157035424901,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_encoded_blob__std",
+      "importance": 0.0001395278532477045,
+      "rf_importance": 0.000279055706495409,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_install_hook__std",
+      "importance": 0.00017635699732906145,
+      "rf_importance": 0.0003527139946581229,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_install_hook__std",
+      "importance": 7.868467906900794e-05,
+      "rf_importance": 0.00015736935813801588,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_install_hook__std",
+      "importance": 0.00019806770248458652,
+      "rf_importance": 0.00039613540496917304,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "add_obfuscation__std",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "rem_obfuscation__std",
+      "importance": 7.830446746818055e-05,
+      "rf_importance": 0.0001566089349363611,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "net_obfuscation__std",
+      "importance": 4.704717571628157e-05,
+      "rf_importance": 9.409435143256314e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_net_http__std",
+      "importance": 0.0007352544637233281,
+      "rf_importance": 0.0014705089274466563,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_subprocess_exec__std",
+      "importance": 0.0005036362484666838,
+      "rf_importance": 0.0010072724969333675,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_env_cred_access__std",
+      "importance": 0.016629486142049826,
+      "rf_importance": 0.002101255175373152,
+      "xgb_importance": 0.0311577171087265
+    },
+    {
+      "feature": "addrate_filesystem__std",
+      "importance": 0.001062883900858487,
+      "rf_importance": 0.002125767801716974,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_encoded_blob__std",
+      "importance": 3.499670619235837e-05,
+      "rf_importance": 6.999341238471674e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_install_hook__std",
+      "importance": 9.895815413387463e-05,
+      "rf_importance": 0.00019791630826774927,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "addrate_obfuscation__std",
+      "importance": 3.506225651210747e-05,
+      "rf_importance": 7.012451302421494e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "added_lines__std",
+      "importance": 0.0064861221492168285,
+      "rf_importance": 0.012972244298433657,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "removed_lines__std",
+      "importance": 0.00898230182883207,
+      "rf_importance": 0.008269114698113285,
+      "xgb_importance": 0.009695488959550858
+    },
+    {
+      "feature": "files_touched__std",
+      "importance": 0.013125482951388183,
+      "rf_importance": 0.026250965902776365,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "files_new__std",
+      "importance": 0.0034891597032615557,
+      "rf_importance": 0.006978319406523111,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "files_total__std",
+      "importance": 0.04892703960254215,
+      "rf_importance": 0.05590222169785544,
+      "xgb_importance": 0.04195185750722885
+    },
+    {
+      "feature": "churn_ratio__std",
+      "importance": 0.0040891066873735464,
+      "rf_importance": 0.008178213374747093,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "touched_frac__std",
+      "importance": 0.020460853993045952,
+      "rf_importance": 0.0277089284492486,
+      "xgb_importance": 0.0132127795368433
+    },
+    {
+      "feature": "tb_blocks__std",
+      "importance": 0.002523953276933679,
+      "rf_importance": 0.005047906553867358,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_src_blocks__std",
+      "importance": 0.0047447835122974265,
+      "rf_importance": 0.001834149943626234,
+      "xgb_importance": 0.007655417080968618
+    },
+    {
+      "feature": "tb_sink_blocks__std",
+      "importance": 0.0013688560786002315,
+      "rf_importance": 0.002737712157200463,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_blocks__std",
+      "importance": 0.0003482997789318628,
+      "rf_importance": 0.0006965995578637256,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_blocks__std",
+      "importance": 0.0001660724125261595,
+      "rf_importance": 0.000332144825052319,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_encoded_flow__std",
+      "importance": 0.00044709276887781055,
+      "rf_importance": 0.0008941855377556211,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_both_rate__std",
+      "importance": 0.000863864158908728,
+      "rf_importance": 0.001727728317817456,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "tb_chain_rate__std",
+      "importance": 0.0001838060464570448,
+      "rf_importance": 0.0003676120929140896,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_added_entropy__std",
+      "importance": 0.0015489087734019843,
+      "rf_importance": 0.0030978175468039685,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_long_strings__std",
+      "importance": 0.0,
+      "rf_importance": 0.0,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_hex_escapes__std",
+      "importance": 3.2066698733365405e-05,
+      "rf_importance": 6.413339746673081e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_max_line_len__std",
+      "importance": 0.005483834161901199,
+      "rf_importance": 0.002604307784723685,
+      "xgb_importance": 0.008363360539078712
+    },
+    {
+      "feature": "sc_mean_line_len__std",
+      "importance": 0.003956211941528511,
+      "rf_importance": 0.002169070721096182,
+      "xgb_importance": 0.00574335316196084
+    },
+    {
+      "feature": "sc_toplevel_stmts__std",
+      "importance": 0.006095250347031903,
+      "rf_importance": 0.012190500694063806,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "sc_toplevel_rate__std",
+      "importance": 0.0030156992202169442,
+      "rf_importance": 0.0036223419128938008,
+      "xgb_importance": 0.0024090565275400877
+    },
+    {
+      "feature": "sc_ident_entropy__std",
+      "importance": 0.013705471466045085,
+      "rf_importance": 0.005170399194082623,
+      "xgb_importance": 0.022240543738007545
+    },
+    {
+      "feature": "sc_mean_ident_len__std",
+      "importance": 0.003616379629350755,
+      "rf_importance": 0.00485648738126368,
+      "xgb_importance": 0.00237627187743783
+    },
+    {
+      "feature": "sc_nonascii_rate__std",
+      "importance": 0.0023431669798631904,
+      "rf_importance": 0.004686333959726381,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_manifest_changed__std",
+      "importance": 0.00018071077039030778,
+      "rf_importance": 0.00036142154078061555,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_scripts_added__std",
+      "importance": 5.352648016103738e-05,
+      "rf_importance": 0.00010705296032207475,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_install_hook_added__std",
+      "importance": 2.805836139169473e-05,
+      "rf_importance": 5.611672278338946e-05,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_deps_added__std",
+      "importance": 0.0007060693612784134,
+      "rf_importance": 0.0014121387225568267,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_setup_changed__std",
+      "importance": 0.0002494948548204325,
+      "rf_importance": 0.000498989709640865,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_network__std",
+      "importance": 0.00017330106409859769,
+      "rf_importance": 0.00034660212819719537,
+      "xgb_importance": 0.0
+    },
+    {
+      "feature": "ih_hook_has_exec__std",
+      "importance": 2.780867630700778e-05,
+      "rf_importance": 5.561735261401556e-05,
+      "xgb_importance": 0.0
+    }
+  ],
+  "extractor_provenance": {
+    "repository": "https://github.com/moatasem2005/Version-Context-and-Control-Construction-in-Machine-Learning-Detection-of-Malicious-Package-Updates",
+    "commit": "e090c96aa6fbe5ecbc59ec83063ea3ce6ebf9754",
+    "source": "notebooks/05_sample_hygiene.ipynb, cell 13",
+    "changes": "Added standard-library imports and removed final notebook log call. Feature functions unchanged.",
+    "extractor_sha256": "5d5efe9589a31d0c200f46b77be49600ec978c21844cb653a9f6acfa91268272",
+    "dataset_sha256": "f434be0699ec7163c49d957b0f27b6eb1312e0098c43934fda6859a03ce4b355"
+  },
+  "library_versions": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "joblib": "1.6.0"
+  },
+  "artifact_sha256": {
+    "package_risk_random_forest.joblib": "b9e6b77105d8c115c2d7469774d0c2c9be4201def65fb21541a6a54b72fc0e36",
+    "package_risk_xgboost.joblib": "b953d3a17c4bc567ef08449b4d4519ff75ab618a239f7614959512499a97c02d"
+  }
+}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "Version Context and Control Construction in Machine Learning Detection of Malicious Package Updates Across npm and PyPI"
+authors:
+  - family-names: "Draz"
+    given-names: "Moatasem M."
+    affiliation: "Department of Information Systems, Faculty of Computers and Information, Kafrelsheikh University, Kafrelsheikh, Egypt"
+abstract: >-
+  Dataset-construction, feature-extraction and evaluation code for a study of
+  version-context detection of malicious package updates in the npm and PyPI
+  registries. The study reports three control-construction designs
+  (within-package, size-matched, and unmatched clean controls) under
+  package-disjoint evaluation, and quantifies the contribution of version
+  context relative to size confounds.
+keywords:
+  - software supply chain security
+  - malicious package detection
+  - npm
+  - PyPI
+  - machine learning
+  - version context
+  - control construction
+doi: 10.5281/zenodo.22051147
+repository-code: "https://github.com/moatasem2005/Version-Context-Detection-of-Malicious-Package-Updates"
+license: MIT
+version: "2.1.0"
+date-released: "2026-08-22"

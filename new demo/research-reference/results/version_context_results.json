@@ -1,0 +1,44 @@
+{
+  "STATUS": "SUPERSEDED - retained for provenance only. This file reports an earlier version-context experiment on a different sample (n=997, prevalence 0.5466). The values quoted in the manuscript come from results/version_context_primary_final.json, which is measured on the 360 primary malicious pairs. Do not cite this file.",
+  "feature_definition": "norm_after_* + before_* + delta_*",
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "prevalence": 0.5466,
+  "n": 997,
+  "packages": 135,
+  "random": {
+    "candidate_only": {
+      "pr_auc": 0.646,
+      "sd": 0.0042
+    },
+    "correct_predecessor": {
+      "pr_auc": 0.7912,
+      "sd": 0.0038
+    },
+    "shuffled_predecessor": {
+      "pr_auc": 0.6087,
+      "sd": 0.0145
+    },
+    "gain_correct_vs_shuffled": 0.1825,
+    "gain_correct_vs_candidate": 0.1451
+  },
+  "package_grouped": {
+    "candidate_only": {
+      "pr_auc": 0.6281,
+      "sd": 0.0019
+    },
+    "correct_predecessor": {
+      "pr_auc": 0.7167,
+      "sd": 0.0045
+    },
+    "shuffled_predecessor": {
+      "pr_auc": 0.5709,
+      "sd": 0.0048
+    },
+    "gain_correct_vs_shuffled": 0.1458,
+    "gain_correct_vs_candidate": 0.0886
+  }
+}

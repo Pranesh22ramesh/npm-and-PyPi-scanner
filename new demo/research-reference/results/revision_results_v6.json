@@ -1,0 +1,77 @@
+{
+  "0. unfiltered (notebook 5)": {
+    "n": 997,
+    "packages": 135,
+    "prevalence": 0.5466,
+    "f1": 0.5689,
+    "f1_sd": 0.0245,
+    "pr_auc": 0.5976,
+    "roc_auc": 0.5608,
+    "fpr": 0.4661,
+    "lift": 0.051
+  },
+  "1. + consecutive only": {
+    "n": 997,
+    "packages": 135,
+    "prevalence": 0.5466,
+    "f1": 0.5689,
+    "f1_sd": 0.0245,
+    "pr_auc": 0.5976,
+    "roc_auc": 0.5608,
+    "fpr": 0.4661,
+    "lift": 0.051
+  },
+  "2. + size ceiling": {
+    "n": 897,
+    "packages": 133,
+    "prevalence": 0.5452,
+    "f1": 0.5971,
+    "f1_sd": 0.0237,
+    "pr_auc": 0.6047,
+    "roc_auc": 0.5658,
+    "fpr": 0.4763,
+    "lift": 0.0595
+  },
+  "3. + per-package cap": {
+    "n": 707,
+    "packages": 133,
+    "prevalence": 0.5092,
+    "f1": 0.5233,
+    "f1_sd": 0.0098,
+    "pr_auc": 0.5453,
+    "roc_auc": 0.551,
+    "fpr": 0.4294,
+    "lift": 0.0361
+  },
+  "4. malicious vs clean controls": {
+    "n": 837,
+    "packages": 192,
+    "prevalence": 0.4301,
+    "f1": 0.7507,
+    "f1_sd": 0.0053,
+    "pr_auc": 0.8363,
+    "roc_auc": 0.8751,
+    "fpr": 0.1628,
+    "lift": 0.4062
+  },
+  "5. all negatives combined": {
+    "n": 1184,
+    "packages": 197,
+    "prevalence": 0.3041,
+    "f1": 0.4004,
+    "f1_sd": 0.0011,
+    "pr_auc": 0.4454,
+    "roc_auc": 0.6948,
+    "fpr": 0.1772,
+    "lift": 0.1413
+  },
+  "verdict": {
+    "best": "4. malicious vs clean controls",
+    "lift": 0.4062,
+    "notebook5_lift": 0.035
+  },
+  "filters": {
+    "size_ceiling_p90": 405.19999999999993,
+    "per_package_cap": 8
+  }
+}
